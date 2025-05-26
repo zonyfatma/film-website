@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Review Film - FilMers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <h1>FilMers</h1>
+      </div>
+      <ul class="menu">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="semua-film.html">Semua Film</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+
+      <form class="search-form" onsubmit="event.preventDefault(); searchFilm();">
+        <input type="text" id="search" placeholder="Cari film..." />
+      </form>
+      <button onclick="openLogin()" class="btn-login">Login</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-overlay">
+        <img src="img/film-background.jpg" alt="Poster background home">
+        <h1>Selamat Datang di <span>FilMers</span></h1>
+        <p>Temukan review film terbaik untukmu</p>
+        <a href="#film-list" class="btn">Mulai Jelajahi</a>
+      </div>
+    </section>
+
+    <!-- Daftar Film -->
+    <section id="film-list" class="film-list container">
+      <div class="film-card">
+        <img src="img/grand-adventure.jpg" alt="Poster The Grand Adventure" onclick="openFilmDetail('The Grand Adventure')" style="cursor:pointer;" />
+        <h3><a href="film.html?title=The%20Grand%20Adventure">The Grand Adventure</a></h3>
+        <p>Genre: Petualangan</p>
+        <p>★★★★☆</p>
+      </div>
+
+      <div class="film-card">
+        <img src="img/romance-paris.jpg" alt="Poster Romance in Paris" onclick="openFilmDetail('Romance in Paris')" style="cursor:pointer;" />
+        <h3><a href="film.html?title=Romance%20in%20Paris">Romance in Paris</a></h3>
+        <p>Genre: Romantis</p>
+        <p>★★★★☆</p>
+      </div>
+
+      <div class="film-card">
+        <img src="img/galactic-empire.jpg" alt="Galactic Empire" onclick="openFilmDetail('Galactic Empire')" style="cursor:pointer;" />
+        <h3><a href="film.html?title=Galactic%20Empire">Galactic Empire</a></h3>
+        <p>Genre: Sci-Fi</p>
+        <p>★★★☆☆</p>
+      </div>
+
+      <div class="film-card">
+        <img src="img/hidden-truth.jpg" alt="Hidden Truth" onclick="openFilmDetail('Hidden Truth')" style="cursor:pointer;" />
+        <h3><a href="film.html?title=Hidden%20Truth">Hidden Truth</a></h3>
+        <p>Genre: Misteri</p>
+        <p>★★★★☆</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="kontak" class="container">
+    <p>© 2025 FilMers. All rights reserved.</p>
+  </footer>
+
+  <!-- Modal Login -->
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeLogin()">&times;</span>
+      <h2>Login</h2>
+      <form action="#" method="POST">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required /><br />
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required /><br />
+        <button type="submit">Masuk</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <!-- Modal Detail Film -->
+<div id="film-detail-modal" class="modal">
+  <div class="modal-content film-detail-content">
+    <span class="close" onclick="closeFilmDetail()">&times;</span>
+    <img id="modal-poster" src="" alt="Poster Film" class="film-poster" />
+    <h2 id="modal-title"></h2>
+
+    <!-- Rating display -->
+    <div id="modal-rating">
+      <p>Rating:</p>
+      <div id="stars-container">
+        <!-- Bintang rating akan dimunculkan di sini -->
+      </div>
+    </div>
+
+    <!-- Komentar -->
+    <section class="komentar-section">
+      <h3>Komentar</h3>
+      <ul id="komentar-list" class="komentar-list">
+        <!-- List komentar muncul di sini -->
+      </ul>
+
+      <form id="komentar-form" class="komentar-form" onsubmit="tambahKomentar(event)">
+        <textarea id="input-komentar" rows="3" placeholder="Tulis komentar..." required></textarea>
+        <button type="submit">Kirim Komentar</button>
+      </form>
+    </section>
+  </div>
+</div>
+
+</body>
+</html>
