@@ -18,7 +18,6 @@
         <li><a href="semua-film.html">Semua Film</a></li>
         <li><a href="kontak.html">Kontak</a></li>
       </ul>
-
       <form class="search-form" onsubmit="event.preventDefault(); searchFilm();">
         <input type="text" id="search" placeholder="Cari film..." />
       </form>
@@ -27,23 +26,34 @@
   </header>
 
   <main class="container">
-    <section id="film-detail">
-      <h2 id="judul-film"></h2>
-      <img id="poster-film" src="" alt="Poster Film" />
-      <p><strong>Genre:</strong> <span id="genre-film"></span></p>
-      <p><strong>Rating:</strong> <span id="rating-film"></span></p>
-      <p id="deskripsi-film"></p>
+    <section id="film-detail" class="film-detail">
+      <div class="film-info">
+        <img id="poster-film" src="" alt="Poster Film" />
+        <div class="info-text">
+          <h2 id="judul-film">Judul Film</h2>
+          <p><strong>Genre:</strong> <span id="genre-film"></span></p>
+          <p><strong>Rating:</strong> <span id="rating-film"></span></p>
+          <p id="deskripsi-film"></p>
+        </div>
+      </div>
+
+      <div class="trailer-section">
+        <h3>Tonton Trailer</h3>
+        <div class="trailer-wrapper">
+          <iframe id="trailer-film" width="100%" height="400" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
 
       <hr />
 
-      <section id="komentar-section">
-        <h3>Komentar</h3>
-        <form id="form-komentar" onsubmit="event.preventDefault(); tambahKomentar();">
+      <section id="komentar-section" class="komentar-section">
+        <h3>Komentar Penonton</h3>
+        <form id="form-komentar" class="komentar-form" onsubmit="event.preventDefault(); tambahKomentar();">
           <input type="text" id="nama-komentar" placeholder="Nama" required />
           <textarea id="isi-komentar" placeholder="Tulis komentar..." required></textarea>
           <button type="submit">Kirim Komentar</button>
         </form>
-        <div id="list-komentar"></div>
+        <div id="list-komentar" class="list-komentar"></div>
       </section>
     </section>
   </main>
