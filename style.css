@@ -1,4 +1,7 @@
-/* === Reset dan Font Dasar === */
+/* Import font modern */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+/* Reset dasar */
 * {
   margin: 0;
   padding: 0;
@@ -6,559 +9,458 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
   line-height: 1.6;
-  background-color: #fdfaf6;
+}
+
+/* Navigasi / Header */
+.navbar {
+  background-color: #d8c1aa;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo h1 {
+  font-size: 1.8em;
+  color: white;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.menu li a:hover {
   color: #333;
 }
 
-/* === Container Umum === */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-/* === Navbar === */
-.navbar {
+.search-form {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  background-color: #c8b6a6;
-  color: white;
-  padding: 1rem 2rem;
-  gap: 1rem;
+  gap: 10px;
 }
 
-.navbar h1 {
-  font-size: 1.8rem;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-
-.navbar ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.navbar ul li a:hover {
-  text-decoration: underline;
-}
-
-/* === Form Pencarian === */
-.search-form input[type="text"] {
-  padding: 0.5rem;
-  border-radius: 5px;
+.search-form input {
+  padding: 8px 12px;
+  border-radius: 20px;
   border: none;
   outline: none;
-}
-
-/* === Hero Section === */
-.hero {
-  position: relative;
-  text-align: center;
-  color: white;
-  padding: 4rem 2rem;
-  background-color: #000;
-}
-
-.hero-overlay {
-  position: relative;
-  z-index: 2;
-}
-
-.hero img {
-  width: 1440px;
-  height: 310px;
-  object-fit: cover;
-  opacity: 0.3;
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  position: relative;
-}
-
-.hero h1 span {
-  color: #f6c177;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  position: relative;
-}
-
-/* === Tombol Umum === */
-.btn {
-  display: inline-block;
-  background-color: #f6c177;
-  color: #000;
-  padding: 0.8rem 1.5rem;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: bold;
-  position: relative;
-}
-
-.btn:hover {
-  background-color: #eabf72;
+  width: 200px;
 }
 
 .btn-login {
-  background-color: #fff;
-  color: #c8b6a6;
-  border: 2px solid #fff;
-  padding: 0.5rem 1rem;
+  background-color: white;
+  border: none;
+  padding: 8px 15px;
   border-radius: 20px;
-  cursor: pointer;
   font-weight: bold;
-  transition: 0.3s;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
 .btn-login:hover {
-  background-color: #f6c177;
-  color: #000;
+  background-color: #f0f0f0;
 }
 
-/* === Film Grid (Homepage) === */
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.hero-overlay img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.hero-overlay h1,
+.hero-overlay p,
+.hero-overlay .btn {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.hero-overlay h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.hero-overlay span {
+  color: #f7d9a0;
+}
+
+.hero-overlay p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.hero-overlay .btn {
+  background-color: #f7d9a0;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.hero-overlay .btn:hover {
+  background-color: #e0c28c;
+}
+
+/* Daftar Film */
 .film-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  padding: 2rem 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 40px 30px;
 }
 
 .film-card {
-  background-color: #fff;
-  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  padding-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.film-card:hover {
+  transform: scale(1.02);
 }
 
 .film-card img {
   width: 100%;
-  height: 300px;
+  height: auto;
   object-fit: cover;
 }
 
 .film-card h3 {
-  margin: 0.8rem 0 0.3rem;
+  text-align: center;
+  margin: 15px 0 5px;
+  font-size: 1.3em;
 }
 
-.film-card a {
+.film-card h3 a {
   text-decoration: none;
   color: #333;
+  transition: color 0.3s;
+}
+
+.film-card h3 a:hover {
+  color: #b7895b;
 }
 
 .film-card p {
-  margin: 0.3rem 0;
-}
-
-/* === Film List Vertikal (semua-film.html) === */
-.film-list-vertikal {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 700px;
-  margin: auto;
-}
-
-.film-card.film-vertikal {
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 1rem;
-}
-
-.film-card.film-vertikal img {
-  width: 150px;
-  height: 220px;
-  border-radius: 6px;
-}
-
-.film-info {
-  flex: 1;
-  margin-left: 1rem;
-  text-align: left;
-}
-
-/* === Filter Genre === */
-.filter-bar {
-  max-width: 700px;
-  margin: 2rem auto 1rem;
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.5rem;
-}
-
-.filter-bar label {
-  font-weight: bold;
-}
-
-select {
-  padding: 0.5rem;
-  font-size: 1rem;
-}
-
-/* === Film Detail Page === */
-.film-detail {
-  padding: 2rem;
   text-align: center;
+  color: #666;
+  margin-bottom: 10px;
 }
 
-.film-detail h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.film-detail img.film-poster {
-  width: 100%;
-  max-width: 300px;
-  margin: 1rem auto;
-  display: block;
-  border-radius: 10px;
-}
-
-.film-detail p {
-  font-size: 1.1rem;
-  margin: 0.5rem 0;
-}
-
-/* === Komentar === */
-.komentar-section {
-  margin-top: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-}
-
-.komentar-section h3 {
-  margin-bottom: 1rem;
-}
-
-.komentar-list {
-  list-style-type: none;
-  padding-left: 0;
-  margin-bottom: 1rem;
-}
-
-.komentar-list li {
-  border-bottom: 1px solid #ddd;
-  padding: 10px 0;
-}
-
-.comment-actions {
-  margin-top: 5px;
-}
-
-.comment-actions button {
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  font-size: 1.1rem;
-  margin-right: 10px;
-  color: #555;
-  transition: color 0.2s;
-}
-
-.comment-actions button:hover {
-  color: #000;
-}
-
-.komentar-form textarea {
-  width: 100%;
-  padding: 0.8rem;
-  margin-bottom: 0.5rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  resize: vertical;
-  font-size: 1rem;
-}
-
-.komentar-form button {
-  padding: 0.6rem 1.2rem;
-  background-color: #f39c12;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #d8c1aa;
   color: white;
-  transition: background-color 0.3s;
+  margin-top: 40px;
 }
 
-.komentar-form button:hover {
-  background-color: #d87f0a;
-}
-
-/* === Modal Login === */
+/* Modal Umum */
 .modal {
   display: none;
   position: fixed;
-  z-index: 1000;
-  padding-top: 60px;
+  z-index: 10;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0,0,0,0.6);
 }
 
 .modal-content {
   background-color: #fff;
-  margin: auto;
-  padding: 2rem;
-  border: 1px solid #888;
-  width: 90%;
-  max-width: 400px;
-  border-radius: 10px;
+  margin: 80px auto;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 .modal-content h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 15px;
 }
 
-.modal-content input[type="email"],
-.modal-content input[type="password"] {
+.modal-content input,
+.modal-content textarea {
   width: 100%;
-  padding: 0.7rem;
-  margin: 0.5rem 0;
-  border-radius: 5px;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
   border: 1px solid #ccc;
 }
 
 .modal-content button {
-  width: 100%;
-  padding: 0.7rem;
-  background-color: #f6c177;
-  color: #000;
+  background-color: #d8c1aa;
   border: none;
-  border-radius: 5px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
   cursor: pointer;
+  margin-top: 10px;
+}
+
+.modal-content button:hover {
+  background-color: #c3ad92;
 }
 
 .close {
-  float: right;
-  font-size: 1.5rem;
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
   cursor: pointer;
 }
 
-/* === Kontak Page === */
-main.container {
-  max-width: 600px;
-  margin: 2rem auto;
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+/* Komentar Section */
+.komentar-section {
+  margin-top: 20px;
 }
 
-main.container h2 {
-  text-align: center;
-  color: #c8b6a6;
-  margin-bottom: 1.5rem;
-}
-
-form label {
-  display: block;
-  margin-bottom: 0.3rem;
-  font-weight: bold;
-  color: #444;
-}
-
-form input[type="text"],
-form input[type="email"],
-form textarea {
+.komentar-form textarea {
   width: 100%;
-  padding: 0.75rem;
-  margin-bottom: 1rem;
+  padding: 10px;
+  border-radius: 8px;
   border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-family: inherit;
-}
-
-form textarea {
   resize: vertical;
-  min-height: 120px;
 }
 
-form button {
-  display: block;
-  width: 100%;
-  background-color: #f6c177;
-  color: #000;
-  padding: 0.75rem;
+.komentar-form button {
+  margin-top: 10px;
+  background-color: #d8c1aa;
   border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-form button:hover {
-  background-color: #eabf72;
-}
-
-/* === Rating Bintang === */
-.rating-stars {
-  font-size: 2rem;
-  cursor: pointer;
-  user-select: none;
-  color: #ccc;
-}
-
-.rating-stars .star {
-  color: #ccc;
-  margin-right: 4px;
-}
-
-.rating-stars .star.filled {
-  color: #f39c12;
-}
-
-/* === Footer === */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #c8b6a6;
   color: white;
-  margin-top: 2rem;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-/* === Responsif === */
+.komentar-form button:hover {
+  background-color: #c3ad92;
+}
+
+/* Container bantu */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsif Mobile */
 @media (max-width: 768px) {
-  .navbar {
+  .menu {
     flex-direction: column;
-    align-items: flex-start;
+    gap: 10px;
+    align-items: center;
   }
 
-  .navbar ul {
+  .navbar {
     flex-direction: column;
-    width: 100%;
+    gap: 10px;
   }
 
   .search-form {
     width: 100%;
-    margin-top: 0.5rem;
+    justify-content: center;
   }
 
-  .hero h1 {
-    font-size: 2rem;
+  .film-list {
+    grid-template-columns: 1fr;
   }
 
-  .hero p {
-    font-size: 1rem;
+  .hero-overlay h1 {
+    font-size: 2em;
   }
 
-  .film-detail {
-    padding: 1rem;
+  .hero-overlay p {
+    font-size: 1em;
+  }
+}
+
+/* --- Styling khusus halaman kontak --- */
+
+.container h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin: 40px 0 30px;
+  font-weight: 700;
+  font-size: 2.2em;
+  letter-spacing: 0.03em;
+}
+
+/* Form kontak */
+.contact-form {
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 0 auto 60px auto;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #34495e;
+  font-size: 1.1em;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px 15px;
+  font-size: 1em;
+  border: 1.8px solid #ccc;
+  border-radius: 10px;
+  transition: border-color 0.3s ease;
+  font-family: 'Quicksand', sans-serif;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #b7895b;
+  outline: none;
+}
+
+.btn-submit {
+  background-color: #b7895b;
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 1.1em;
+  font-weight: 700;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center;
+  width: 180px;
+  box-shadow: 0 5px 10px rgba(183, 137, 91, 0.6);
+}
+
+.btn-submit:hover {
+  background-color: #9e7242;
+  box-shadow: 0 6px 15px rgba(158, 114, 66, 0.8);
+}
+
+/* Responsive untuk form kontak */
+@media (max-width: 640px) {
+  .contact-form {
+    padding: 20px 25px;
+    width: 90%;
   }
 
-  .film-card img {
-    height: 220px;
+  .btn-submit {
+    width: 100%;
   }
+}
 
-  .film-card.film-vertikal {
+/* Detail Film Styling */
+.film-detail {
+  padding: 40px 0;
+}
+
+.film-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.film-info img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.info-text {
+  flex: 1;
+}
+
+.trailer-section {
+  margin-bottom: 40px;
+}
+
+.trailer-wrapper iframe {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* Komentar Styling Tambahan */
+.list-komentar {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.list-komentar .komentar-item {
+  background-color: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.komentar-item strong {
+  display: block;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .film-info {
     flex-direction: column;
     align-items: center;
   }
 
-  .film-info {
-    margin-left: 0;
-    text-align: center;
+  .trailer-wrapper iframe {
+    height: 250px;
   }
 }
-
-.film-detail-content {
-  max-width: 600px;
-  text-align: center;
-  position: relative;
-}
-
-.film-poster {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-}
-
-#stars-container {
-  font-size: 2rem;
-  color: gold;
-  margin-bottom: 1rem;
-}
-
-#film-detail img {
-  max-width: 300px;
-  border-radius: 6px;
-  margin-bottom: 1rem;
-}
-#film-detail p {
-  margin-bottom: 0.5rem;
-}
-
-/* Komentar Section */
-#komentar-section {
-  margin-top: 2rem;
-}
-#form-komentar {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-#form-komentar input,
-#form-komentar textarea {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
-}
-#form-komentar button {
-  width: 120px;
-  padding: 0.5rem;
-  background-color: #ffd700;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 4px;
-  align-self: flex-start;
-}
-#form-komentar button:hover {
-  background-color: #ffc107;
-}
-
-#list-komentar {
-  margin-top: 1rem;
-  border-top: 1px solid #ddd;
-  padding-top: 1rem;
-}
-.komentar-item {
-  margin-bottom: 1rem;
-  background: #f0f0f0;
-  padding: 0.8rem;
-  border-radius: 5px;
-}
-.komentar-item .nama-komentar {
-  font-weight: bold;
-  margin-bottom: 0.3rem;
-}
-
