@@ -2,12 +2,13 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Semua Film - FilMers</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <!-- Navbar -->
   <header>
     <nav class="navbar">
       <div class="logo">
@@ -15,10 +16,9 @@
       </div>
       <ul class="menu">
         <li><a href="index.html">Beranda</a></li>
-        <li><a href="semua-film.html">Semua Film</a></li>
+        <li><a href="semua-film.html" class="active">Semua Film</a></li>
         <li><a href="kontak.html">Kontak</a></li>
       </ul>
-
       <form class="search-form" onsubmit="event.preventDefault(); searchFilm();">
         <input type="text" id="search" placeholder="Cari film..." />
       </form>
@@ -26,56 +26,41 @@
     </nav>
   </header>
 
-  <div class="filter-bar">
-    <label for="genre-filter">Filter Genre:</label>
-    <select id="genre-filter" onchange="filterGenre()">
-      <option value="all">Semua</option>
-      <option value="Petualangan">Petualangan</option>
-      <option value="Romantis">Romantis</option>
-      <option value="Sci-Fi">Sci-Fi</option>
-      <option value="Misteri">Misteri</option>
-    </select>
-  </div>
-
-  <section class="film-list-vertikal" id="film-list">
-    <div class="film-card" data-genre="Petualangan">
-      <img src="img/grand-adventure.jpg" alt="Poster The Grand Adventure" />
-      <div class="film-info">
-        <h3>The Grand Adventure</h3>
+  <!-- Konten Daftar Semua Film -->
+  <main>
+    <section class="film-list">
+      <div class="film-card">
+        <img src="img/grand-adventure.jpg" alt="The Grand Adventure" />
+        <h3><a href="film.html?title=The%20Grand%20Adventure">The Grand Adventure</a></h3>
         <p>Genre: Petualangan</p>
-        <p>Rating: ★★★★☆</p>
+        <p>★★★★☆</p>
       </div>
-    </div>
 
-    <div class="film-card" data-genre="Romantis">
-      <img src="img/romance-paris.jpg" alt="Poster Romance in Paris" />
-      <div class="film-info">
-        <h3>Romance in Paris</h3>
+      <div class="film-card">
+        <img src="img/romance-paris.jpg" alt="Romance in Paris" />
+        <h3><a href="film.html?title=Romance%20in%20Paris">Romance in Paris</a></h3>
         <p>Genre: Romantis</p>
-        <p>Rating: ★★★★☆</p>
+        <p>★★★★☆</p>
       </div>
-    </div>
 
-    <div class="film-card" data-genre="Sci-Fi">
-      <img src="img/galactic-empire.jpg" alt="Poster Galactic Empire" />
-      <div class="film-info">
-        <h3>Galactic Empire</h3>
+      <div class="film-card">
+        <img src="img/galactic-empire.jpg" alt="Galactic Empire" />
+        <h3><a href="film.html?title=Galactic%20Empire">Galactic Empire</a></h3>
         <p>Genre: Sci-Fi</p>
-        <p>Rating: ★★★☆☆</p>
+        <p>★★★☆☆</p>
       </div>
-    </div>
 
-    <div class="film-card" data-genre="Misteri">
-      <img src="img/hidden-truth.jpg" alt="Poster Hidden Truth" />
-      <div class="film-info">
-        <h3>Hidden Truth</h3>
+      <div class="film-card">
+        <img src="img/hidden-truth.jpg" alt="Hidden Truth" />
+        <h3><a href="film.html?title=Hidden%20Truth">Hidden Truth</a></h3>
         <p>Genre: Misteri</p>
-        <p>Rating: ★★★★☆</p>
+        <p>★★★★☆</p>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <footer>
+  <!-- Footer -->
+  <footer class="container">
     <p>© 2025 FilMers. All rights reserved.</p>
   </footer>
 
